@@ -3,6 +3,12 @@
   @apply pt-[70px] pb-[70px];
 }
 
+.center-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 // container
 .container {
   @apply mx-auto max-w-[1140px] px-4;

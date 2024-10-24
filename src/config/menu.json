@@ -5,24 +5,28 @@
       "url": "/"
     },
     {
-      "name": "Blog",
-      "url": "/blog"
+      "name": "Nuturopathic Nutrition",
+      "url": "/nutritional-therapy"
     },
     {
-      "name": "Pricing",
-      "url": "/pricing"
+      "name": "Services",
+      "url": "/evviva-consultation"
     },
     {
-      "name": "Contact",
-      "url": "/contact"
+      "name": "Success Stories",
+      "url": "/success-stories"
     },
     {
-      "name": "FAQ",
-      "url": "/faq"
+      "name": "About Me",
+      "url": "/about-veronica"
     },
     {
-      "name": "Elements",
-      "url": "/elements"
+      "name": "Book Free Health Assessment",
+      "url": "https://app.acuityscheduling.com/schedule.php?owner=15393136"
+    },
+    {
+      "name": "Contacts",
+      "url": "/evviva-contact-us"
     }
   ],
   "footer": [

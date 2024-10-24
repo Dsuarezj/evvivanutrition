@@ -1,10 +1,10 @@
 {
   "site": {
-    "title": "Bigspring Light Astro",
-    "base_url": "https://bigspring-light-astro.vercel.app",
+    "title": "Evviva Nutrition - Nutritional Therapy for Unique You.",
+    "base_url": "https://evvivanutrition.com",
     "base_path": "/",
     "trailing_slash": false,
-    "favicon": "/images/favicon.png",
+    "favicon": "/images/favicon.jpg",
     "logo": "/images/logo.png",
     "logo_width": "200",
     "logo_height": "38",
@@ -19,8 +19,8 @@
 
   "nav_button": {
     "enable": true,
-    "label": "Get Started",
-    "link": "/contact"
+    "label": "Book Free Health Assessment",
+    "link": "https://app.acuityscheduling.com/schedule.php?owner=15393136"
   },
 
   "params": {
