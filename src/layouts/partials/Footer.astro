@@ -13,7 +13,7 @@ const currentYear = new Date().getFullYear();
 <footer class="section bg-theme-light pb-0">
   <div class="container">
     {/* footer menu */}
-    <div class="row">
+    <div class="row text-center sm:text-left">
       {
         menu.footer.map((col) => {
           return (
@@ -27,15 +27,14 @@ const currentYear = new Date().getFullYear();
                 {col?.menu.map((item) => {
                   if (item.image) {
                     return (
-                      <li class="mb-1">
-                        <a href={item.url} target="_blank">
-                          <Image
-                            src={item.image}
-                            width={150}
-                            height={150}
-                            alt=""
-                          />
-                        </a>
+                      <li class="mb-1 w-1/2 inline-block sm:w-full">
+                        <Image
+                          class="mx-auto sm:mx-0"
+                          src={item.image}
+                          width={150}
+                          height={150}
+                          alt={item.url}
+                        />
                       </li>
                     )
                   } else {
@@ -57,6 +56,7 @@ const currentYear = new Date().getFullYear();
       <div class="md-12 sm:col-6 lg:col-3">
         <a href="/" aria-label="Bigspring">
           <Image
+            class="mx-auto sm:mx-0"
             src={config.site.logo}
             width={Number(config.site.logo_width)}
             height={Number(config.site.logo_height)}

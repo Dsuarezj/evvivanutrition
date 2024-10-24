@@ -34,14 +34,14 @@
       "name": "image",
       "menu": [
         {
-          "text": "Bant logo",
-          "url": "http://bant.org.uk/about-us/",
-          "image": "/images/BANT-LOGO.jpg"
-        },
-        {
           "text": "CNHC logo",
           "url": "https://www.cnhc.org.uk/what-we-do#gsc.tab=0",
           "image": "/images/CNHC-LOGO.jpg"
+        },
+        {
+          "text": "Bant logo",
+          "url": "http://bant.org.uk/about-us/",
+          "image": "/images/BANT-LOGO.jpg"
         }
       ]
     },
@@ -49,14 +49,14 @@
       "name": "image",
       "menu": [
         {
-          "text": "ANP logo",
-          "url": "https://theanp.co.uk/",
-          "image": "/images/ANP-LOGO.png"
-        },
-        {
           "text": "ZEST logo",
           "url": "https://www.zest4life.com/",
           "image": "/images/ZEST-LOGO.png"
+        },
+        {
+          "text": "ANP logo",
+          "url": "https://theanp.co.uk/",
+          "image": "/images/ANP-LOGO.png"
         }
       ]
     },
