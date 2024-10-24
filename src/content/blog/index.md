@@ -1,4 +1,4 @@
 ---
-title: "Latest news"
-description: "this is meta description"
+title: "HEALTH TIPS + NEWS"
+description: "health tips and news"
 ---

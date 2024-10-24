@@ -7,6 +7,7 @@ import social from "@/config/social.json";
 import { markdownify } from "@/lib/utils/textConverter";
 
 const { footer_content, copyright } = config.params;
+const currentYear = new Date().getFullYear();
 ---
 
 <footer class="section bg-theme-light pb-0">
@@ -17,15 +18,36 @@ const { footer_content, copyright } = config.params;
         menu.footer.map((col) => {
           return (
             <div class="mb-12 sm:col-6 lg:col-3">
-              <h2 class="h4" set:html={markdownify(col.name)} />
+              {
+                col.name !== 'image' && (
+                  <h2 class="h4" set:html={markdownify(col.name)} />
+                )
+              }
               <ul class="mt-6">
-                {col?.menu.map((item) => (
-                  <li class="mb-1">
-                    <a href={item.url} rel="">
-                      {item.text}
-                    </a>
-                  </li>
-                ))}
+                {col?.menu.map((item) => {
+                  if (item.image) {
+                    return (
+                      <li class="mb-1">
+                        <a href={item.url} target="_blank">
+                          <Image
+                            src={item.image}
+                            width={150}
+                            height={150}
+                            alt=""
+                          />
+                        </a>
+                      </li>
+                    )
+                  } else {
+                  return (
+                    <li class="mb-1">
+                      <a href={item.url} rel="">
+                        {item.text}
+                      </a>
+                    </li>
+                  )}
+                }
+                )}
               </ul>
             </div>
           );
@@ -48,7 +70,7 @@ const { footer_content, copyright } = config.params;
     </div>
     {/* copyright */}
     <div class="border-t border-border py-6">
-      <p class="text-sm text-center" set:html={markdownify(copyright)} />
+      <p class="text-sm text-center" set:html={markdownify(copyright.replace('YEAR', currentYear.toString()))} />
     </div>
   </div>
 </footer>

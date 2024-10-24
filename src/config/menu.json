@@ -31,32 +31,32 @@
   ],
   "footer": [
     {
-      "name": "Company",
+      "name": "image",
       "menu": [
         {
-          "text": "Pricing",
-          "url": "/pricing"
+          "text": "Bant logo",
+          "url": "http://bant.org.uk/about-us/",
+          "image": "/images/BANT-LOGO.jpg"
         },
         {
-          "text": "Quick Start",
-          "url": "#"
+          "text": "CNHC logo",
+          "url": "https://www.cnhc.org.uk/what-we-do#gsc.tab=0",
+          "image": "/images/CNHC-LOGO.jpg"
         }
       ]
     },
     {
-      "name": "Product",
+      "name": "image",
       "menu": [
         {
-          "text": "Features",
-          "url": "#"
+          "text": "ANP logo",
+          "url": "https://theanp.co.uk/",
+          "image": "/images/ANP-LOGO.png"
         },
         {
-          "text": "Platform",
-          "url": "#"
-        },
-        {
-          "text": "Pricing",
-          "url": "/pricing"
+          "text": "ZEST logo",
+          "url": "https://www.zest4life.com/",
+          "image": "/images/ZEST-LOGO.png"
         }
       ]
     },
@@ -64,16 +64,8 @@
       "name": "Support",
       "menu": [
         {
-          "text": "FAQ",
-          "url": "/faq"
-        },
-        {
           "text": "Privacy Policy",
           "url": "/privacy-policy"
-        },
-        {
-          "text": "Terms & Conditions",
-          "url": "/terms-conditions"
         }
       ]
     }
