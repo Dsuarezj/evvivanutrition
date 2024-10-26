@@ -46,8 +46,17 @@ export type TPostType = {
     description?: string;
     call_to_action?: TCallToAction;
     plans?: TPlan[];
+    context: TBasicContent;
+    services: TBasicContent;
+    included: TBasicContent;
+    extras: TBasicContent;
   };
 };
+
+export type TBasicContent = {
+  title: string;
+  content: string;
+}
 
 export type TPlan = {
   title: string;

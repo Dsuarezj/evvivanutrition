@@ -62,7 +62,7 @@ const { banner, call_to_action } = homepage.data;
   <!-- Blog info -->
   <section class="section">
     <div class="container">
-      <h1
+      <h2
         class="text-center font-normal lg:text-[56px]"
         set:html={markdownify(postIndex?.data.title)}
       />
@@ -75,7 +75,7 @@ const { banner, call_to_action } = homepage.data;
           ))
         }
       </div>
-      <a class="btn btn-outline-primary mt-4 block text-center w-full md:w-1/2 mx-auto" href={banner.button.link}>
+      <a class="btn btn-outline-primary mt-4 block text-center w-full md:w-1/2 mx-auto" href="/blog"}>
         Find more articles
       </a>
     </div>

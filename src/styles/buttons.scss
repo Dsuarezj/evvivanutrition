@@ -11,6 +11,9 @@
   &:hover::after {
     @apply w-[110%] h-[110%];
   }
+  &:hover {
+    @apply text-white; /* Ensure text color remains the same on hover */
+  }
 }
 
 .btn-outline-primary {
