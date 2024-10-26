@@ -19,7 +19,6 @@ const postIndex = (await getEntryBySlug<any, string>(
 )) as TIndexData;
 const posts = await getSinglePage(blog_folder as any);
 const sortedPosts = sortByDate(posts);
-const totalPages = Math.ceil(posts.length / config.settings.pagination);
 const currentPosts = sortedPosts.slice(0, config.settings.pagination);
 const homepage = await getEntryBySlug("homepage", "index");
 const { banner, call_to_action } = homepage.data;

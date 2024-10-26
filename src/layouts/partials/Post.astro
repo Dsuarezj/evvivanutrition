@@ -24,7 +24,7 @@ const { blog_folder, summary_length } = config.settings;
       {post.data.title}
     </a>
   </h2>
-  <p set:html={plainify(post.body.slice(0, summary_length))} />
+  <p set:html={plainify(post.body.slice(0, summary_length).replaceAll("**",""))} />
   <a class="btn btn-primary mt-4" href={`/${blog_folder}/${post.slug}`} rel="">
     Read More
   </a>
