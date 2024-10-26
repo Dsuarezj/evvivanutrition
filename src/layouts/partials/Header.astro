@@ -1,6 +1,5 @@
 ---
 import Logo from "@/components/Logo.astro";
-import { nav_button } from "@/config/config.json";
 import menu from "@/config/menu.json";
 
 const pathname = new URL(Astro.request.url).pathname;
@@ -19,7 +18,7 @@ export interface NavigationLink {
 
 const { main }: { main: NavigationLink[] } = menu;
 ---
-<div class="info-bar bg-[#a0ce4e] text-right text-white p-2 text-xs mb-8">
+<div class="info-bar bg-[#a0ce4e] text-right text-white p-2 text-s mb-8">
   <span class="mr-4 hidden md:inline">Veronica De Angelis</span>
   <span class="mr-4 hidden md:inline">|</span>
   <span class="mr-4 hidden md:inline">Nutritional Therapist and Health Coach</span>
@@ -81,6 +80,7 @@ const { main }: { main: NavigationLink[] } = menu;
                         class={`nav-dropdown-link block ${
                           pathname === child.url && "nav-link-active"
                         }`}
+                        target={child.name.toLowerCase().includes("book") ? "_blank" : "_self"}
                       >
                         {child.name}
                       </a>
@@ -95,6 +95,7 @@ const { main }: { main: NavigationLink[] } = menu;
                   class={`nav-link block ${
                     pathname === menu.url && "nav-link-active"
                   }`}
+                  target={menu.name.toLowerCase().includes("book") ? "_blank" : "_self"}
                 >
                   {menu.name}
                 </a>

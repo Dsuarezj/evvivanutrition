@@ -3,10 +3,10 @@ title: "Contact Us"
 draft: false
 info: 
   title: Why you should contact us!
-  description: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit recusandae voluptates doloremque veniam temporibus porro culpa ipsa, nisi soluta minima saepe laboriosam debitis nesciunt.
+  description: You can schedule a free 20 minutes health assessment and choose a date and time that suits you best. At the scheduled time I will call you at the contact number you have given. You can also fill the form below. Please feel free to ask any question about the Health Assessment or Health Programs.
   contacts: 
-    - "phone: +88 125 256 452"
-    - "Mail: [info@bigspring.com](mailto:info@bigspring.com)"
-    - "Address: 360 Main rd, Rio, Brazil"
+    - "phone: 07757313920"
+    - "Mail: [info@evvivanutrition.com](mailto:info@evvivanutrition.com)"
+    - "Address: 46 Theobalds Rd, London WC1X 8NW"
 ---
 
