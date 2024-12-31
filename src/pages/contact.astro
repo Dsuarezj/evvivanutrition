@@ -5,9 +5,7 @@ import { markdownify } from "@/lib/utils/textConverter";
 import { getEntryBySlug } from "astro:content";
 
 const entry = await getEntryBySlug("contact", "index");
-const { title, description, info } = entry?.data;
-const homepage = await getEntryBySlug("homepage", "index");
-const { call_to_action } = homepage.data;
+const { title, description, info, call_to_action } = entry?.data;
 ---
 
 <Base title={title} description={description}>
@@ -16,7 +14,7 @@ const { call_to_action } = homepage.data;
       <h1 class="text-center font-normal" set:html={markdownify(title)} />
       <div class="section row pb-0">
         <div class="col-12 md:col-6 lg:col-7 mt-[-70px]">
-        <Cta cta={call_to_action} />
+        <Cta cta={call_to_action}  class="mt-[-70px]" />
         </div>
         <div class="content col-12 md:col-6 lg:col-5">
           <h4 set:html={markdownify(info?.title)} />
