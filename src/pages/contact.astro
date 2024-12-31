@@ -1,12 +1,13 @@
 ---
-import config from "@/config/config.json";
+import Cta from "@/components/Cta.astro";
 import Base from "@/layouts/Base.astro";
 import { markdownify } from "@/lib/utils/textConverter";
 import { getEntryBySlug } from "astro:content";
 
 const entry = await getEntryBySlug("contact", "index");
-const { contact_form_action } = config.params;
 const { title, description, info } = entry?.data;
+const homepage = await getEntryBySlug("homepage", "index");
+const { call_to_action } = homepage.data;
 ---
 
 <Base title={title} description={description}>
@@ -14,43 +15,8 @@ const { title, description, info } = entry?.data;
     <div class="container">
       <h1 class="text-center font-normal" set:html={markdownify(title)} />
       <div class="section row pb-0">
-        <div class="col-12 md:col-6 lg:col-7">
-          <form class="contact-form" method="POST" action={contact_form_action}>
-            <div class="mb-3">
-              <input
-                class="form-input w-full rounded"
-                name="name"
-                type="text"
-                placeholder="Name"
-                required
-              />
-            </div>
-            <div class="mb-3">
-              <input
-                class="form-input w-full rounded"
-                name="email"
-                type="email"
-                placeholder="Your email"
-                required
-              />
-            </div>
-            <div class="mb-3">
-              <input
-                class="form-input w-full rounded"
-                name="subject"
-                type="text"
-                placeholder="Subject"
-                required
-              />
-            </div>
-            <div class="mb-3">
-              <textarea
-                class="form-textarea w-full rounded-md"
-                rows="7"
-                placeholder="Your message"></textarea>
-            </div>
-            <button type="submit" class="btn btn-primary"> Send Now</button>
-          </form>
+        <div class="col-12 md:col-6 lg:col-7 mt-[-70px]">
+        <Cta cta={call_to_action} />
         </div>
         <div class="content col-12 md:col-6 lg:col-5">
           <h4 set:html={markdownify(info?.title)} />
