@@ -1,0 +1,43 @@
+---
+import { Image } from "astro:assets";
+
+const { article } = Astro.props;
+---
+
+<article class="post column feature rounded h-[500px] grid grid-rows-[auto_1fr_auto]">
+  {
+    article.image && (
+      <Image
+        class="rounded-lg"
+        src={`${article.image.filename}/m/360x240`}
+        alt={article.image.alt}
+        width={445}
+        height={230}
+      />
+    )
+  }
+
+  <div class="p-4 grid grid-rows-[auto_1fr_auto] h-full">
+    <div>
+      <h2 class="h3 mb-2 mt-4">
+        <a href={`/blog/${article.slug}`} class="block hover:text-primary">
+          {article.title}
+        </a>
+      </h2>
+
+      <p class="leading-relaxed text-gray-700 line-clamp-2 my-4">
+        {article.teaser}
+      </p>
+    </div>
+
+    <div class="self-end">
+      <a
+        class="btn btn-primary"
+        href={`/blog/${article.slug}`}
+        title="read more"
+      >
+        Read More
+      </a>
+    </div>
+  </div>
+</article>

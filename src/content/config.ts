@@ -144,7 +144,7 @@ export interface PageData {
 
 // Export collections
 export const collections = {
-  blog: postsCollection,
+  article: postsCollection,
   pages: pagesCollection,
   // homepage: homepage,
   // contact: contact_page,
