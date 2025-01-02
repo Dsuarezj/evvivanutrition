@@ -1,0 +1,62 @@
+---
+import config from "@/config/config.json";
+import Base from "@/layouts/Base.astro";
+import Cta from "@/layouts/components/Cta.astro";
+import { getSinglePage } from "@/lib/contentParser.astro";
+import { sortByDate } from "@/lib/utils/sortFunctions";
+import type { TIndexData } from "@/types";
+import { renderRichText, useStoryblokApi } from "@storyblok/astro";
+import StoryblokComponent from "@storyblok/astro/StoryblokComponent.astro";
+import { getEntryBySlug } from "astro:content";
+import PostSingle from "@/layouts/PostSingle.astro";
+import "@/styles/storyblok.scss";
+
+export async function getStaticPaths() {
+  const storyblokApi = useStoryblokApi();
+
+  const links = await storyblokApi.getAll("cdn/links", {
+    version: "draft",
+  });
+  return links
+    .filter((link) => !link.is_folder)
+    .map((link) => {
+      return {
+        params: {
+          slug: link.slug === "home" ? undefined : link.slug,
+        },
+      };
+    });
+}
+
+const { slug } = Astro.params;
+
+const { blog_folder } = config.settings;
+
+const storyblokApi = useStoryblokApi();
+const { data } = await storyblokApi.get(
+  `cdn/stories/${slug === undefined ? "home" : slug}`,
+  {
+    version: "draft",
+    resolve_relations: ['popular-articles.articles'],
+  }
+);
+
+const posts = await getSinglePage(blog_folder as any);
+const sortedPosts = sortByDate(posts);
+const homepage = await getEntryBySlug("homepage", "index");
+const { call_to_action } = homepage.data;
+const story = data.story;
+
+const post = story?.content;
+---
+
+<Base title={story.content?.title} image={story.content?.image?.filename}>
+  <section class="section">
+    <div class="container">
+      <StoryblokComponent blok={story.content} class="storyblok-component" />
+    </div>
+  </section>
+
+  <!-- Call to Action -->
+  <Cta cta={call_to_action} />
+</Base>

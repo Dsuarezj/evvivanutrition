@@ -29,6 +29,15 @@ export type TPost = {
   render: () => Promise<void>;
 };
 
+export type Article = {
+  content: {
+    slug: string;
+  };
+  slug: string;
+};
+
+
+
 export type TFaqItem = {
   title: string;
   answer: string;
