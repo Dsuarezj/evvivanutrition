@@ -7,6 +7,9 @@ import { defineConfig, squooshImageService } from "astro/config";
 import remarkCollapse from "remark-collapse";
 import remarkToc from "remark-toc";
 import config from "./src/config/config.json";
+import basicSsl from "@vitejs/plugin-basic-ssl";
+import storyblok from '@storyblok/astro'
+
 
 // https://astro.build/config
 export default defineConfig({
@@ -16,9 +19,31 @@ export default defineConfig({
   image: {
     service: squooshImageService(),
   },
+  vite: {
+    plugins: [basicSsl()],
+    server: {
+      https: true,
+    },
+  },
   integrations: [
     react(),
     sitemap(),
+    storyblok({
+      accessToken: "W1aWNLFb8pEdANDn1La6fwtt",
+      components: {
+        page: 'storyblok/Page',
+        feature: 'storyblok/Feature',
+        grid: 'storyblok/Grid',
+        hero: 'storyblok/Hero',
+        banner: 'storyblok/Banner',
+        teaser: 'storyblok/Teaser',
+        config: 'storyblok/Config',
+        'popular-articles': 'storyblok/PopularArticles',
+        'all-articles': 'storyblok/AllArticles',
+        article: 'storyblok/Article',
+        cta: 'storyblok/Cta',
+      },
+    }),
     tailwind({
       config: {
         applyBaseStyles: false,
