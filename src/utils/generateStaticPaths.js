@@ -5,7 +5,7 @@ import { languages } from './langs'
 export default async function generateStaticPaths() {
     const storyblokApi = useStoryblokApi()
     const links = await storyblokApi.getAll('cdn/links', {
-        version: isPreview() ? 'draft' : 'published',
+        version: 'draft',
     })
     let paths = []
     links
