@@ -41,6 +41,7 @@ export default defineConfig({
         'popular-articles': 'storyblok/PopularArticles',
         'all-articles': 'storyblok/AllArticles',
         article: 'storyblok/Article',
+        cta: 'storyblok/Cta',
       },
     }),
     tailwind({
