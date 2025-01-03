@@ -1,8 +1,60 @@
 ---
 import Logo from "@/components/Logo.astro";
 import menu from "@/config/menu.json";
+import { useStoryblokApi } from '@storyblok/astro'
 
 const pathname = new URL(Astro.request.url).pathname;
+
+const storyblokApi = useStoryblokApi()
+const { data } = await storyblokApi.get('cdn/stories/config', {
+  version: 'draft',
+  resolve_links: 'url',
+})
+
+const headerMenu = data?.story?.content?.header_menu
+const name = data?.story?.content?.name
+const job_title = data?.story?.content?.job_title
+const email = data?.story?.content?.email
+
+function transformMenuLinksString(linksString: string) {
+  const linksArray = linksString.replace(/[{}]/g, '').split('},').map(link => link.trim());
+  const transformedLinks = linksArray.map(link => {
+    if (!link) return;
+    const [namePart, urlPart] = link.split(';').map(part => part.trim());
+    const name = namePart.split(':')[1].trim().replace(/"/g, '');
+    const url = urlPart.split(':')[1].trim().replace(/"/g, '');
+    return { name, url };
+  });
+
+  return transformedLinks;
+}
+
+const main = headerMenu?.map((menu: HeaderMenuLink) => ({
+  name: menu.name,
+  url: menu.url.cached_url == 'home' ? '/' : menu.url.cached_url,
+  hasChildren: menu.hasChildren,
+  children: transformMenuLinksString(menu.children).map((child) => ({
+    name: child?.name,
+    url: child?.url,
+  })),
+}))
+
+
+export interface HeaderMenuLink {
+  url: {
+    id: string;
+    url: string;
+    linktype: string;
+    fieldtype: string;
+    cached_url: string;
+  };
+  _uid: string;
+  name: string;
+  children: string;
+  component: string;
+  hasChildren: boolean;
+  _editable: string;
+}
 
 export interface ChildNavigationLink {
   name: string;
@@ -16,14 +68,15 @@ export interface NavigationLink {
   children?: ChildNavigationLink[];
 }
 
-const { main }: { main: NavigationLink[] } = menu;
+
+//const { main }: { main: NavigationLink[] } = menu;
 ---
 <div class="info-bar bg-[#a0ce4e] text-right text-white p-2 text-s mb-8">
-  <span class="mr-4 hidden md:inline">Veronica De Angelis</span>
+  <span class="mr-4 hidden md:inline">{name}</span>
   <span class="mr-4 hidden md:inline">|</span>
-  <span class="mr-4 hidden md:inline">Nutritional Therapist and Health Coach</span>
+  <span class="mr-4 hidden md:inline">{job_title}</span>
   <span class="mr-4 hidden md:inline">|</span>
-  <a href="mailto:info@evvivanutrition.com" class="mr-4">info@evvivanutrition.com</a>
+  <a href={"mailto:" + email} class="mr-4">{email}</a>
 </div>
 <header class="header shadow-md">
   <nav class="navbar container">
