@@ -11,23 +11,24 @@ const renderedRichText = renderRichText(blok.content);
 <section {...storyblokEditable(blok)}>
   <div class="container">
     <h1 set:html={markdownify(blok.title)} class="h2 text-center my-6" />
-    <div class="content">
-      <div class="content text-left" set:html={renderedRichText} />
-    </div>
-    {
-      blok.image?.filename && (
-        <div class="flex justify-center my-6">
-          <Image
-            client:load
-            src={blok.image?.filename}
-            alt={blok.image?.alt}
-            width="300"
-            inferSize={true}
-          />
+    <div class="content grid grid-cols-1 md:grid-cols-[auto_1fr] gap-6 justify-items-center md:justify-items-start items-center">
+      {blok.image?.filename && (
+        <div class="flex justify-center my-6 max-w-max md:mr-12 mr-0">
+          <div class="aspect-w-1 aspect-h-1 w-full max-w-[300px]">
+            <Image
+              client:load
+              src={blok.image.filename}
+              alt={blok.image.alt}
+              class="object-cover"
+              width="300"
+              height="300"
+              inferSize={true}
+            />
+          </div>
         </div>
-      )
-    }
-
+      )}
+      <div class="text-left" set:html={renderedRichText}></div>
+    </div>
     <div class="flex justify-center mt-6">
       <a
         class="btn btn-primary"
