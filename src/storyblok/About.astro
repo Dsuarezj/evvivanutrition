@@ -1,0 +1,41 @@
+---
+import { storyblokEditable, renderRichText } from "@storyblok/astro";
+import { markdownify } from "@/lib/utils/textConverter";
+import { Image } from "astro:assets";
+
+const { blok } = Astro.props;
+
+const renderedRichText = renderRichText(blok.content);
+---
+
+<section {...storyblokEditable(blok)}>
+  <div class="container">
+    <h1 set:html={markdownify(blok.title)} class="h2 text-center my-6" />
+    <div class="content">
+      <div class="content text-left" set:html={renderedRichText} />
+    </div>
+    {
+      blok.image?.filename && (
+        <div class="flex justify-center my-6">
+          <Image
+            client:load
+            src={blok.image.filename}
+            alt={blok.image.alt}
+            width="300"
+            inferSize={true}
+          />
+        </div>
+      )
+    }
+
+    <div class="flex justify-center mt-6">
+      <a
+        class="btn btn-primary"
+        href={blok.button.cached_url}
+        target={blok.button.target || "_self"}
+      >
+        {blok.button.title}
+      </a>
+    </div>
+  </div>
+</section>
