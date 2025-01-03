@@ -90,3 +90,38 @@ export type TCallToAction = {
     link: string;
   };
 };
+
+
+export type Url = {
+  id: string;
+  url: string;
+  target: string;
+  linktype: string;
+  fieldtype: string;
+  cached_url: string;
+};
+
+export type Image = {
+  id: number;
+  alt: string;
+  name: string;
+  focus: string;
+  title: string;
+  source: string;
+  filename: string;
+  copyright: string;
+  fieldtype: string;
+  meta_data: Record<string, unknown>;
+  is_external_url: boolean;
+};
+
+export type FooterItem = {
+  url: Url;
+  text: string;
+  image: Image;
+};
+
+export type FooterColumn = {
+  menu: Item[];
+  name: string;
+};
