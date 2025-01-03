@@ -1,43 +1,27 @@
-import mdx from "@astrojs/mdx";
+import { defineConfig } from 'astro/config';
 import react from "@astrojs/react";
-import sitemap from "@astrojs/sitemap";
-import tailwind from "@astrojs/tailwind";
-import AutoImport from "astro-auto-import";
-import { defineConfig, squooshImageService } from "astro/config";
-import remarkCollapse from "remark-collapse";
-import remarkToc from "remark-toc";
-import config from "./src/config/config.json";
-import basicSsl from "@vitejs/plugin-basic-ssl";
+import { loadEnv } from 'vite'
+import basicSsl from '@vitejs/plugin-basic-ssl'
 import storyblok from '@storyblok/astro'
+import tailwind from "@astrojs/tailwind";
+import vercel from "@astrojs/vercel/serverless";
+const env = loadEnv("", process.cwd(), 'STORYBLOK')
 
-
-// https://astro.build/config
+let output = env.STORYBLOK_IS_PREVIEW === 'yes' ? 'server' : 'static';
+console.log('**** output', output)
 export default defineConfig({
-  site: config.site.base_url ? config.site.base_url : "http://examplesite.com",
-  base: config.site.base_path ? config.site.base_path : "/",
-  trailingSlash: config.site.trailing_slash ? "always" : "never",
-  image: {
-    service: squooshImageService(),
-  },
-  vite: {
-    plugins: [basicSsl()],
-    server: {
-      https: true,
-    },
-  },
   integrations: [
-    react(),
-    sitemap(),
     storyblok({
-      accessToken: "W1aWNLFb8pEdANDn1La6fwtt",
+      accessToken: env.STORYBLOK_TOKEN,
+      bridge: env.STORYBLOK_IS_PREVIEW === 'yes',
       components: {
         page: 'storyblok/Page',
+        config: 'storyblok/Config',
         feature: 'storyblok/Feature',
         grid: 'storyblok/Grid',
+        teaser: 'storyblok/Teaser',
         hero: 'storyblok/Hero',
         banner: 'storyblok/Banner',
-        teaser: 'storyblok/Teaser',
-        config: 'storyblok/Config',
         'popular-articles': 'storyblok/PopularArticles',
         'all-articles': 'storyblok/AllArticles',
         article: 'storyblok/Article',
@@ -45,39 +29,15 @@ export default defineConfig({
         'about': 'storyblok/About',
       },
     }),
-    tailwind({
-      config: {
-        applyBaseStyles: false,
-      },
-    }),
-    AutoImport({
-      imports: [
-        "@/shortcodes/Button",
-        "@/shortcodes/Accordion",
-        "@/shortcodes/Notice",
-        "@/shortcodes/Image",
-        "@/shortcodes/Video",
-        "@/shortcodes/Youtube",
-        "@/shortcodes/Tabs",
-        "@/shortcodes/Tab",
-      ],
-    }),
-    mdx(),
+    tailwind(),
+    react(),
   ],
-  markdown: {
-    remarkPlugins: [
-      remarkToc,
-      [
-        remarkCollapse,
-        {
-          test: "Table of contents",
-        },
-      ],
-    ],
-    shikiConfig: {
-      theme: "one-dark-pro",
-      wrap: true,
+  output,
+  vite: {
+    plugins: [basicSsl()],
+    server: {
+      https: true,
     },
-    extendDefaultPlugins: true,
   },
-});
+  adapter: vercel()
+})
