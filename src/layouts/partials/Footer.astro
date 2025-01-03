@@ -41,7 +41,7 @@ const currentYear = new Date().getFullYear();
                     return (
 
                       <li class="mb-1 w-1/2 inline-block sm:w-full">
-                        <a href={item.url.cached_url} target={item.url.target}>
+                        <a href={item.url.cached_url} target={item.url.target || "_self"}>
                           <Image
                             class="mx-auto sm:mx-0"
                             src={item.image.filename}
