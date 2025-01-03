@@ -19,8 +19,8 @@ const renderedRichText = renderRichText(blok.content);
         <div class="flex justify-center my-6">
           <Image
             client:load
-            src={blok.image.filename}
-            alt={blok.image.alt}
+            src={blok.image?.filename}
+            alt={blok.image?.alt}
             width="300"
             inferSize={true}
           />
@@ -31,8 +31,8 @@ const renderedRichText = renderRichText(blok.content);
     <div class="flex justify-center mt-6">
       <a
         class="btn btn-primary"
-        href={blok.button.cached_url}
-        target={blok.button.target || "_self"}
+        href={blok.button?.cached_url}
+        target={blok.button?.target || "_self"}
       >
         {blok.button.title}
       </a>
