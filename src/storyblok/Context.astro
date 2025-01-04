@@ -1,0 +1,13 @@
+---
+import type { Plan } from "@/types";
+import { renderRichText, storyblokEditable } from "@storyblok/astro";
+
+const { blok } = Astro.props;
+const context = blok;
+console.log(blok);
+---
+
+<section class="section pt-0" {...storyblokEditable(blok)}>
+  <h1 class="text-center font-normal">{context?.title}</h1>
+  <p class="mt-4" set:html={renderRichText(context?.content)} />
+</section>

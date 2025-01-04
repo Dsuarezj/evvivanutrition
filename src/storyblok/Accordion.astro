@@ -1,0 +1,21 @@
+---
+import type { AccordionItem } from "@/types";
+import { renderRichText, storyblokEditable } from "@storyblok/astro";
+import AccordionComponent from "@/shortcodes/Accordion";
+
+const { blok } = Astro.props;
+const accordionItem = blok.accordionItem;
+---
+
+<section class="section p-0" {...storyblokEditable(blok)}>
+  {
+    accordionItem?.length &&
+      accordionItem.map((item: AccordionItem) => {
+        return (
+          <AccordionComponent client:load title={item?.title}>
+            {item?.content && <p set:html={renderRichText(item?.content)} />}
+          </AccordionComponent>
+        );
+      })
+  }
+</section>

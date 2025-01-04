@@ -11,7 +11,7 @@ const { blok } = Astro.props;
     <div class="row mx-auto items-center justify-center">
       <div class="md:col-5 lg:col-4">
         {
-          blok?.image && (
+          blok?.image && blok?.image.filename !== "" && (
             <Image
               class="w-auto max-h-[300px] mx-auto"
               src={blok?.image.filename}
