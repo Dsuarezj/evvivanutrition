@@ -1,0 +1,46 @@
+---
+import type { Plan } from "@/types";
+import { renderRichText, storyblokEditable } from "@storyblok/astro";
+
+const { blok } = Astro.props;
+const plans = blok.plans;
+const title = blok.title;
+---
+
+<section class="section p-0" {...storyblokEditable(blok)}>
+  <h2 class="text-center font-normal">{title}</h2>
+  <div class="section row -mt-10 justify-center md:mt-0">
+    {
+      plans?.map((plan: Plan) => (
+        <div
+          class={`col-12 md:col-4 ${
+            !plan.recommended ? "lg:px-0" : "col-recommended"
+          }`}
+        >
+          <div class="card text-center h-[500px]">
+            <h4>{plan.title}</h4>
+            <div class="mt-5">
+              <span class="text-5xl text-dark">£{plan.price}</span>
+            </div>
+            <h5 class="mt-2 font-normal text-text">{plan.subtitle}</h5>
+            <ul class="mt-5">
+              <li
+                class="mb-[10px] leading-5"
+                set:html={renderRichText(plan?.features)}
+              />
+            </ul>
+            <a
+              class={`btn mt-5 ${
+                plan.recommended ? "btn-primary" : "btn-outline-primary"
+              }`}
+              href={plan.button.cached_url}
+              target={plan.button.target || "_self"}
+            >
+              {plan.button.title}
+            </a>
+          </div>
+        </div>
+      ))
+    }
+  </div>
+</section>

@@ -37,6 +37,10 @@ export type Article = {
 };
 
 
+export type AccordionItem = {
+  title: string;
+  content: ISbRichtext;
+};
 
 export type TFaqItem = {
   title: string;
@@ -77,6 +81,19 @@ export type TPlan = {
   button: {
     label: string;
     link: string;
+  };
+};
+
+export type Plan = {
+  title: string;
+  subtitle: string;
+  price: number;
+  recommended: boolean;
+  features: ISbRichtext;
+  button: {
+    title: string;
+    cached_url: string;
+    target: string;
   };
 };
 
