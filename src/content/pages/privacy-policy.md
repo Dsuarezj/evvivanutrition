@@ -4,13 +4,13 @@ description: "Privacy Policy"
 draft: false
 ---
 
-### PRIVACY POLICY 
+### PRIVACY POLICY
 
 Evviva Nutrition holds some information about you. This document outlines how that information is used, who we may share that information with and how we keep it secure. This notice does not provide exhaustive detail. However, we are happy to provide any additional information or explanation needed. Any requests for this should be sent to the info@evvivanutrition.com. We keep our Privacy Notice under regular review. This Privacy Notice was last reviewed in May 2018.
 
 #### WHAT WE DO
 
-Evviva Nutrition provides nutritional therapy and health coaching services to clients to improve their health through diet and lifestyle interventions.  We focus on preventative healthcare, the optimisation of physical and mental health and chronic health conditions.  Through nutritional therapy consultations, dietary and lifestyle analysis and biochemical testing, we aim to understand the underlying causes of your health issues which we will seek to address through personalised dietary therapy, nutraceutical prescription such as supplements and lifestyle suggestions.
+Evviva Nutrition provides nutritional therapy and health coaching services to clients to improve their health through diet and lifestyle interventions. We focus on preventative healthcare, the optimisation of physical and mental health and chronic health conditions. Through nutritional therapy consultations, dietary and lifestyle analysis and biochemical testing, we aim to understand the underlying causes of your health issues which we will seek to address through personalised dietary therapy, nutraceutical prescription such as supplements and lifestyle suggestions.
 
 We also provide workshops and nutrition talks events.
 
@@ -44,27 +44,27 @@ This may include the following information:
 
 – Bank details
 
-We use this information in order to provide you with direct healthcare.  This means that the legal basis of our holding your personal data is for a legitimate interest.
+We use this information in order to provide you with direct healthcare. This means that the legal basis of our holding your personal data is for a legitimate interest.
 
-Following completion of your healthcare, we retain your personal data for the period defined by our professional association BANT and registrant body CNHC.  This enables us to process any complaint you may make.  In this case, the legal basis of our holding your personal data is for contract administration.
+Following completion of your healthcare, we retain your personal data for the period defined by our professional association BANT and registrant body CNHC. This enables us to process any complaint you may make. In this case, the legal basis of our holding your personal data is for contract administration.
 
 Information we get from other sources
 
-We may obtain sensitive medical information in the form of test results from biochemical testing companies.  We use this information in order to provide you with direct healthcare.  This means that the legal basis of our holding your personal data is for legitimate interest.
+We may obtain sensitive medical information in the form of test results from biochemical testing companies. We use this information in order to provide you with direct healthcare. This means that the legal basis of our holding your personal data is for legitimate interest.
 
-We may obtain sensitive information from other healthcare providers.  The provision of this information is subject to you giving us your express consent. If we do not receive this consent from you, we will not be able to coordinate your healthcare with that provided by other providers which means the healthcare provided by us may be less effective.
+We may obtain sensitive information from other healthcare providers. The provision of this information is subject to you giving us your express consent. If we do not receive this consent from you, we will not be able to coordinate your healthcare with that provided by other providers which means the healthcare provided by us may be less effective.
 
 #### HOW WE USE YOUR PERSONAL DATA
 
-We act as a data controller for use of your personal data to provide direct healthcare.  We also act as a controller and processor in regard to the processing of your data from third parties such as testing companies and other healthcare providers.  We act as a data controller and processor in regard to the processing of credit card and online payments.
+We act as a data controller for use of your personal data to provide direct healthcare. We also act as a controller and processor in regard to the processing of your data from third parties such as testing companies and other healthcare providers. We act as a data controller and processor in regard to the processing of credit card and online payments.
 
-We undertake at all times to protect your personal data, including any health and contact details, in a manner which is consistent with our duty of professional confidence and the requirements of the General Data Protection Regulation (GDPR) concerning data protection.  We will also take reasonable security measures to protect your personal data storage.
+We undertake at all times to protect your personal data, including any health and contact details, in a manner which is consistent with our duty of professional confidence and the requirements of the General Data Protection Regulation (GDPR) concerning data protection. We will also take reasonable security measures to protect your personal data storage.
 
 We may use your personal data where there is an overriding public interest in using the information e.g. in order to safeguard an individual or to prevent a serious crime. Also where there is a legal requirement such as a formal court order. We may use your data for marketing purposes such as newsletters but this would be subject to you giving us your express consent.
 
 #### DO YOU SHARE MY INFORMATION WITH OTHER ORGANISATIONS?
 
-We will keep information about you confidential.  We will only disclose your information with other third parties with your express consent with the exception of the following categories of third parties:
+We will keep information about you confidential. We will only disclose your information with other third parties with your express consent with the exception of the following categories of third parties:
 
 – Our registrant body, CNHC and our professional association, BANT, for the processing of a complaint made by you
 
@@ -74,17 +74,17 @@ We will keep information about you confidential.  We will only disclose your inf
 
 – Any legal or crime prevention agencies and/or to satisfy any regulatory request (eg, CNHC if we have a duty to do so or if the law allows us to do so
 
-We may share your information with supplement companies and biochemical testing companies as part of providing you with direct healthcare.  We will not include any sensitive information
+We may share your information with supplement companies and biochemical testing companies as part of providing you with direct healthcare. We will not include any sensitive information
 
-We will seek your express consent before sharing your information with your GP or other healthcare providers.  However, if we believe that your life is in danger then we may pass your information onto an appropriate authority (such as the police, social services in the case of a child or vulnerable adult, or GP in case of self-harm) using the legal basis of vital interests.
+We will seek your express consent before sharing your information with your GP or other healthcare providers. However, if we believe that your life is in danger then we may pass your information onto an appropriate authority (such as the police, social services in the case of a child or vulnerable adult, or GP in case of self-harm) using the legal basis of vital interests.
 
-We may share your case history in an anonymised form with our peers for the purpose of professional development.  This may be at clinical supervision meetings, conferences, online forums, and through publishing in medical journals, trade magazines or online professional sites.  We will seek your explicit consent before processing your data in this way.
+We may share your case history in an anonymised form with our peers for the purpose of professional development. This may be at clinical supervision meetings, conferences, online forums, and through publishing in medical journals, trade magazines or online professional sites. We will seek your explicit consent before processing your data in this way.
 
-#### WHAT ARE YOUR RIGHTS? 
+#### WHAT ARE YOUR RIGHTS?
 
 Every individual has the right to see, amend, delete or have a copy, of data held that can identify you, with some exceptions. You do not need to give a reason to see your data.
 
-If you want to access your data you must make a subject access request in writing to info@evvivanutrition.com. Under special circumstances, some information may be withheld.   We shall respond within 20 working days from the point of receiving the request and all necessary information from you. Our response will include the details of the personal data we hold on you including:
+If you want to access your data you must make a subject access request in writing to info@evvivanutrition.com. Under special circumstances, some information may be withheld. We shall respond within 20 working days from the point of receiving the request and all necessary information from you. Our response will include the details of the personal data we hold on you including:
 
 – Sources from which we acquired the information
 
@@ -113,11 +113,11 @@ We also ensure the information we hold is kept in secure locations, restrict acc
 
 Evviva Nutrition is registered with the Information Commissioner’s Office (ICO) as a data controller and collects data for a variety of purposes. A copy of the registration is available through the ICO website (search by business name).
 
-#### HOW LONG DO YOU HOLD CONFIDENTIAL INFORMATION FOR? 
+#### HOW LONG DO YOU HOLD CONFIDENTIAL INFORMATION FOR?
 
 All records held by Evviva Nutrition will be kept for the duration specified by guidance from our professional association BANT.
 
-#### FORMS 
+#### FORMS
 
 We do use electronic forms on our website making use of an available ‘forms module’ which has a number of built-in features to help ensure privacy. We also aim to use secure forms where appropriate.
 
@@ -126,9 +126,3 @@ We do use electronic forms on our website making use of an available ‘forms mo
 If you have a complaint regarding the use of your personal data then please contact us by writing to the Data Controller by email at info@evvivanutrition.com and we will do our best to help you.
 
 If your complaint is not resolved to your satisfaction and you wish to make a formal complaint to the Information Commissioner’s Office (ICO), you can contact them on 01625 545745 or 0303 1231113
-
-
-
-
-
-
