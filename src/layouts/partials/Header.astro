@@ -1,28 +1,31 @@
 ---
 import Logo from "@/components/Logo.astro";
 import menu from "@/config/menu.json";
-import { useStoryblokApi } from '@storyblok/astro'
+import { useStoryblokApi } from "@storyblok/astro";
 
 const pathname = new URL(Astro.request.url).pathname;
 
-const storyblokApi = useStoryblokApi()
-const { data } = await storyblokApi.get('cdn/stories/config', {
-  version: 'draft',
-  resolve_links: 'url',
-})
+const storyblokApi = useStoryblokApi();
+const { data } = await storyblokApi.get("cdn/stories/config", {
+  version: "draft",
+  resolve_links: "url",
+});
 
-const headerMenu = data?.story?.content?.header_menu
-const name = data?.story?.content?.name
-const job_title = data?.story?.content?.job_title
-const email = data?.story?.content?.email
+const headerMenu = data?.story?.content?.header_menu;
+const name = data?.story?.content?.name;
+const job_title = data?.story?.content?.job_title;
+const email = data?.story?.content?.email;
 
 function transformMenuLinksString(linksString: string) {
-  const linksArray = linksString.replace(/[{}]/g, '').split('},').map(link => link.trim());
-  const transformedLinks = linksArray.map(link => {
+  const linksArray = linksString
+    .replace(/[{}]/g, "")
+    .split("},")
+    .map((link) => link.trim());
+  const transformedLinks = linksArray.map((link) => {
     if (!link) return;
-    const [namePart, urlPart] = link.split(';').map(part => part.trim());
-    const name = namePart.split(':')[1].trim().replace(/"/g, '');
-    const url = urlPart.split(':')[1].trim().replace(/"/g, '');
+    const [namePart, urlPart] = link.split(";").map((part) => part.trim());
+    const name = namePart.split(":")[1].trim().replace(/"/g, "");
+    const url = urlPart.split(":")[1].trim().replace(/"/g, "");
     return { name, url };
   });
 
@@ -31,14 +34,13 @@ function transformMenuLinksString(linksString: string) {
 
 const main = headerMenu?.map((menu: HeaderMenuLink) => ({
   name: menu.name,
-  url: menu.url.cached_url == 'home' ? '/' : menu.url.cached_url,
+  url: menu.url.cached_url == "home" ? "/" : menu.url.cached_url,
   hasChildren: menu.hasChildren,
   children: transformMenuLinksString(menu.children).map((child) => ({
     name: child?.name,
     url: child?.url,
   })),
-}))
-
+}));
 
 export interface HeaderMenuLink {
   url: {
@@ -68,9 +70,9 @@ export interface NavigationLink {
   children?: ChildNavigationLink[];
 }
 
-
 //const { main }: { main: NavigationLink[] } = menu;
 ---
+
 <div class="info-bar bg-[#a0ce4e] text-right text-white p-2 text-s mb-8">
   <span class="mr-4 hidden md:inline">{name}</span>
   <span class="mr-4 hidden md:inline">|</span>
@@ -133,7 +135,11 @@ export interface NavigationLink {
                         class={`nav-dropdown-link block ${
                           pathname === child.url && "nav-link-active"
                         }`}
-                        target={child.name.toLowerCase().includes("book") ? "_blank" : "_self"}
+                        target={
+                          child.name.toLowerCase().includes("book")
+                            ? "_blank"
+                            : "_self"
+                        }
                       >
                         {child.name}
                       </a>
@@ -148,7 +154,11 @@ export interface NavigationLink {
                   class={`nav-link block ${
                     pathname === menu.url && "nav-link-active"
                   }`}
-                  target={menu.name.toLowerCase().includes("book") ? "_blank" : "_self"}
+                  target={
+                    menu.name.toLowerCase().includes("book")
+                      ? "_blank"
+                      : "_self"
+                  }
                 >
                   {menu.name}
                 </a>

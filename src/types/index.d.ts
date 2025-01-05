@@ -36,7 +36,6 @@ export type Article = {
   slug: string;
 };
 
-
 export type AccordionItem = {
   title: string;
   content: ISbRichtext;
@@ -69,7 +68,7 @@ export type TPostType = {
 export type TBasicContent = {
   title: string;
   content: string;
-}
+};
 
 export type TPlan = {
   title: string;
@@ -107,7 +106,6 @@ export type TCallToAction = {
     link: string;
   };
 };
-
 
 export type Url = {
   id: string;

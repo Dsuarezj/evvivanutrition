@@ -28,12 +28,11 @@ const { data } = await storyblokApi.get(
   `cdn/stories/${slug === undefined ? "home" : slug}`,
   {
     version: "draft",
-    resolve_relations: ['popular-articles.articles'],
-  }
+    resolve_relations: ["popular-articles.articles"],
+  },
 );
 
 const story = data.story;
-
 ---
 
 <Base title={story.content?.title} image={story.content?.image?.filename}>

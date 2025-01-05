@@ -4,7 +4,9 @@ import { Image } from "astro:assets";
 const { article } = Astro.props;
 ---
 
-<article class="post column feature rounded h-[500px] grid grid-rows-[auto_1fr_auto]">
+<article
+  class="post column feature rounded h-[500px] grid grid-rows-[auto_1fr_auto]"
+>
   {
     article.image && (
       <Image

@@ -8,17 +8,16 @@ import type { FooterColumn, FooterItem } from "@/types";
 
 const { copyright } = config.params;
 
-const storyblokApi = useStoryblokApi()
-const { data } = await storyblokApi.get('cdn/stories/config', {
-  version: 'draft',
-  resolve_links: 'url',
-})
+const storyblokApi = useStoryblokApi();
+const { data } = await storyblokApi.get("cdn/stories/config", {
+  version: "draft",
+  resolve_links: "url",
+});
 
-
-const footer = data?.story?.content?.footer
-const footer_logo = data?.story?.content?.footer_logo
-const footer_content = data?.story?.content?.footer_content
-const social = data?.story?.content?.social
+const footer = data?.story?.content?.footer;
+const footer_logo = data?.story?.content?.footer_logo;
+const footer_content = data?.story?.content?.footer_content;
+const social = data?.story?.content?.social;
 const currentYear = new Date().getFullYear();
 ---
 
@@ -30,18 +29,18 @@ const currentYear = new Date().getFullYear();
         footer.map((col: FooterColumn) => {
           return (
             <div class="mb-12 sm:col-6 lg:col-3">
-              {
-                col.name !== 'image' && (
-                  <h2 class="h4" set:html={markdownify(col.name)} />
-                )
-              }
+              {col.name !== "image" && (
+                <h2 class="h4" set:html={markdownify(col.name)} />
+              )}
               <ul class="mt-6">
                 {col?.menu.map((item: FooterItem) => {
                   if (item.image.filename) {
                     return (
-
                       <li class="mb-1 w-1/2 inline-block sm:w-full">
-                        <a href={item.url.cached_url} target={item.url.target || "_self"}>
+                        <a
+                          href={item.url.cached_url}
+                          target={item.url.target || "_self"}
+                        >
                           <Image
                             class="mx-auto sm:mx-0"
                             src={item.image.filename}
@@ -51,17 +50,17 @@ const currentYear = new Date().getFullYear();
                           />
                         </a>
                       </li>
-                    )
+                    );
                   } else {
-                  return (
-                    <li class="mb-1">
-                      <a href={item.url.cached_url} rel="">
-                        {item.text}
-                      </a>
-                    </li>
-                  )}
-                }
-                )}
+                    return (
+                      <li class="mb-1">
+                        <a href={item.url.cached_url} rel="">
+                          {item.text}
+                        </a>
+                      </li>
+                    );
+                  }
+                })}
               </ul>
             </div>
           );
@@ -87,7 +86,12 @@ const currentYear = new Date().getFullYear();
     </div>
     {/* copyright */}
     <div class="border-t border-border py-6">
-      <p class="text-sm text-center" set:html={markdownify(copyright.replace('YEAR', currentYear.toString()))} />
+      <p
+        class="text-sm text-center"
+        set:html={markdownify(
+          copyright.replace("YEAR", currentYear.toString()),
+        )}
+      />
     </div>
   </div>
 </footer>

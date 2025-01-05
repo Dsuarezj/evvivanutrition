@@ -14,7 +14,12 @@ const Button = ({
   center?: boolean;
 }) => {
   return (
-    <div style={{ display: center ? "flex" : "block", justifyContent: center ? "center" : "initial" }}>
+    <div
+      style={{
+        display: center ? "flex" : "block",
+        justifyContent: center ? "center" : "initial",
+      }}
+    >
       <a
         href={link}
         target="_blank"
