@@ -31,7 +31,7 @@
     "react-lite-youtube-embed": "^2.4.0",
     "remark-collapse": "^0.1.2",
     "remark-toc": "^9.0.0",
-    "sharp": "0.33.1",
+    "sharp": "0.35.0",
     "storyblok-markdown-richtext": "^1.0.3",
     "swiper": "^11.0.5",
     "tailwindcss": "^3.4.6",
