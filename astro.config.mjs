@@ -3,9 +3,9 @@ import { defineConfig } from "astro/config";
 import react from "@astrojs/react";
 import { loadEnv } from "vite";
 import basicSsl from "@vitejs/plugin-basic-ssl";
-import storyblok from "@storyblok/astro";
+import { storyblok } from "@storyblok/astro";
 import tailwind from "@astrojs/tailwind";
-import vercel from "@astrojs/vercel/serverless";
+import vercel from "@astrojs/vercel";
 import AutoImport from "astro-auto-import";
 import remarkCollapse from "remark-collapse";
 import remarkToc from "remark-toc";
@@ -69,7 +69,6 @@ export default defineConfig({
       theme: "one-dark-pro",
       wrap: true,
     },
-    extendDefaultPlugins: true,
   },
   output,
   vite: {
