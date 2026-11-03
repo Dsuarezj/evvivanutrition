@@ -1,36 +1,40 @@
 # Evviva Nutrition
 
-Sitio web de Evviva Nutrition, migrado de WordPress a Astro.js, con Storyblok como CMS y desplegado en Vercel.
+Evviva Nutrition website, migrated from WordPress to Astro.js, with Storyblok as CMS and deployed on Vercel.
 
-**Sitio en vivo:** https://www.evvivanutrition.com/
+**Live site:** https://www.evvivanutrition.com/
 
-## Trabajo realizado
+## Work done
 
-- Migración del sitio de WordPress a Astro.js.
-- Adaptación del diseño y los componentes de la plantilla a la identidad y los contenidos de Evviva Nutrition.
-- Integración de Storyblok para gestionar páginas, artículos y bloques de contenido.
-- Configuración del despliegue en Vercel.
+- Migrated the site from WordPress to Astro.js.
+- Adapted the template design and components to Evviva Nutrition's brand and content.
+- Integrated Storyblok to manage pages, articles, and content blocks.
+- Configured deployment on Vercel.
 
-## Tecnologías
+## Technologies
 
-Astro.js, Storyblok, Tailwind CSS y Vercel.
+Astro.js, Storyblok, Tailwind CSS, and Vercel.
 
-## Desarrollo local
+## Local development
 
-Requiere Node.js y acceso al espacio de Storyblok del proyecto.
+Requires Node.js and access to the project's Storyblok space.
 
-1. Instala las dependencias con `npm install`.
-2. Crea un archivo `.env` con `STORYBLOK_TOKEN` y el token de acceso del espacio de Storyblok. No lo subas al repositorio.
-3. Ejecuta `npm run dev`.
+1. Install dependencies with `npm install`.
+2. Create a `.env` file with `STORYBLOK_TOKEN` and the Storyblok space access token. Do not commit it.
+3. Run `npm run dev`.
 
-Para activar la vista previa de Storyblok, añade `STORYBLOK_IS_PREVIEW=yes` al archivo `.env`. Sin esta opción, el sitio se genera de forma estática.
+To enable Storyblok preview, add `STORYBLOK_IS_PREVIEW=yes` to the `.env` file. Without this option, the site is generated statically.
 
-| Comando | Descripción |
+| Command | Description |
 | --- | --- |
-| `npm run dev` | Inicia el servidor de desarrollo con HTTPS. |
-| `npm run build` | Genera la versión de producción. |
-| `npm run preview` | Previsualiza la compilación local. |
+| `npm run dev` | Starts the development server with HTTPS. |
+| `npm run build` | Builds the production version. |
+| `npm run preview` | Previews the local production build. |
 
-## Créditos
+## Reviewer
 
-Basado en la plantilla [Bigspring Light Astro de Themefisher](https://github.com/themefisher/bigspring-light-astro), distribuida bajo licencia MIT. Se conserva el aviso de licencia original en [LICENSE](./LICENSE).
+- Denisse Suarez
+
+## Credits
+
+Based on the [Bigspring Light Astro template by Themefisher](https://github.com/themefisher/bigspring-light-astro), distributed under the MIT license. The original license notice is kept in [LICENSE](./LICENSE).
